@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4A6B48"/>
+      <stop offset="50%" stop-color="#688F66"/>
+      <stop offset="100%" stop-color="#8DB58A"/>
+    </linearGradient>
+    <linearGradient id="leafGradL" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#385437"/>
+      <stop offset="60%" stop-color="#638C61"/>
+      <stop offset="100%" stop-color="#8CB48A"/>
+    </linearGradient>
+    <linearGradient id="leafGradR" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#385437"/>
+      <stop offset="60%" stop-color="#638C61"/>
+      <stop offset="100%" stop-color="#9BC499"/>
+    </linearGradient>
+    <linearGradient id="petalBack" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3C096C"/>
+      <stop offset="50%" stop-color="#5A189A"/>
+      <stop offset="100%" stop-color="#7B2CBF"/>
+    </linearGradient>
+    <linearGradient id="petalLeft" x1="0%" y1="100%" x2="80%" y2="0%">
+      <stop offset="0%" stop-color="#5A189A"/>
+      <stop offset="40%" stop-color="#7B2CBF"/>
+      <stop offset="80%" stop-color="#B57EDC"/>
+      <stop offset="100%" stop-color="#D8B4F8"/>
+    </linearGradient>
+    <linearGradient id="petalRight" x1="100%" y1="100%" x2="20%" y2="0%">
+      <stop offset="0%" stop-color="#481173"/>
+      <stop offset="45%" stop-color="#7B2CBF"/>
+      <stop offset="85%" stop-color="#B57EDC"/>
+      <stop offset="100%" stop-color="#F5D9F2"/>
+    </linearGradient>
+    <linearGradient id="petalCenter" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#6E25A8"/>
+      <stop offset="30%" stop-color="#9D4EDD"/>
+      <stop offset="70%" stop-color="#B57EDC"/>
+      <stop offset="95%" stop-color="#E9D5FF"/>
+      <stop offset="100%" stop-color="#FAF7FF"/>
+    </linearGradient>
+    <radialGradient id="tulipGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#D8B4F8" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#B57EDC" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <circle cx="200" cy="180" r="95" fill="url(#tulipGlow)" />
+
+  <!-- Stem -->
+  <path d="M200,230 Q206,340 196,470" fill="none" stroke="url(#stemGrad)" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Left Leaf -->
+  <path d="M196,410 C145,375 105,310 110,230 C135,280 170,340 197,365 Z" fill="url(#leafGradL)" opacity="0.95"/>
+  <!-- Right Leaf -->
+  <path d="M197,430 C242,395 290,335 285,200 C262,275 230,345 197,385 Z" fill="url(#leafGradR)" opacity="0.95"/>
+
+  <!-- Back Petals -->
+  <path d="M175,170 C160,110 185,70 200,60 C215,70 240,110 225,170 Z" fill="url(#petalBack)"/>
+  <path d="M152,185 C132,130 148,80 170,72 C185,120 180,170 168,198 Z" fill="url(#petalBack)" opacity="0.85"/>
+  <path d="M248,185 C268,130 252,80 230,72 C215,120 220,170 232,198 Z" fill="url(#petalBack)" opacity="0.85"/>
+
+  <!-- Left Main Petal -->
+  <path d="M195,240 C145,235 120,175 132,118 C148,88 175,85 186,102 C164,148 174,198 195,240 Z" fill="url(#petalLeft)"/>
+
+  <!-- Right Main Petal -->
+  <path d="M205,240 C255,235 280,175 268,118 C252,88 225,85 214,102 C236,148 226,198 205,240 Z" fill="url(#petalRight)"/>
+
+  <!-- Center Front Petal -->
+  <path d="M200,248 C162,238 152,160 174,102 C186,76 214,76 226,102 C248,160 238,238 200,248 Z" fill="url(#petalCenter)" filter="url(#softGlow)"/>
+
+  <!-- Center Highlight Rib -->
+  <path d="M200,238 C188,180 190,125 200,90 C210,125 212,180 200,238 Z" fill="#FFFFFF" opacity="0.25"/>
+
+  <!-- Dew drops -->
+  <circle cx="186" cy="140" r="3.5" fill="#FFFFFF" opacity="0.8"/>
+  <circle cx="190" cy="137" r="1.5" fill="#FFFFFF" opacity="0.95"/>
+  <circle cx="218" cy="170" r="2.8" fill="#FAF7FF" opacity="0.7"/>
+</svg>

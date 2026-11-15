@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bqStem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4B6B48"/>
+      <stop offset="100%" stop-color="#8BB588"/>
+    </linearGradient>
+    <linearGradient id="bqLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#385437"/>
+      <stop offset="70%" stop-color="#648E62"/>
+      <stop offset="100%" stop-color="#9BC499"/>
+    </linearGradient>
+    <linearGradient id="bqDark" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3C096C"/>
+      <stop offset="100%" stop-color="#7B2CBF"/>
+    </linearGradient>
+    <linearGradient id="bqMed" x1="0%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#5A189A"/>
+      <stop offset="50%" stop-color="#7B2CBF"/>
+      <stop offset="100%" stop-color="#B57EDC"/>
+    </linearGradient>
+    <linearGradient id="bqLight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7B2CBF"/>
+      <stop offset="50%" stop-color="#B57EDC"/>
+      <stop offset="90%" stop-color="#D8B4F8"/>
+      <stop offset="100%" stop-color="#FAF7FF"/>
+    </linearGradient>
+    <linearGradient id="bqSoftPink" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7B2CBF"/>
+      <stop offset="60%" stop-color="#D8B4F8"/>
+      <stop offset="100%" stop-color="#F5D9F2"/>
+    </linearGradient>
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9D4EDD"/>
+      <stop offset="40%" stop-color="#D8B4F8"/>
+      <stop offset="80%" stop-color="#B57EDC"/>
+      <stop offset="100%" stop-color="#7B2CBF"/>
+    </linearGradient>
+    <radialGradient id="bouquetGlow" cx="50%" cy="35%" r="50%">
+      <stop offset="0%" stop-color="#D8B4F8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#FAF7FF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bqGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="300" cy="220" rx="220" ry="180" fill="url(#bouquetGlow)"/>
+
+  <!-- Stems gathered -->
+  <g stroke="url(#bqStem)" stroke-width="9" stroke-linecap="round">
+    <path d="M190,260 C240,360 270,440 280,590"/>
+    <path d="M240,240 C260,350 285,440 295,590"/>
+    <path d="M300,210 C300,340 300,440 300,600"/>
+    <path d="M360,240 C340,350 315,440 305,590"/>
+    <path d="M410,260 C360,360 330,440 320,590"/>
+    <path d="M220,300 C250,380 275,450 288,580"/>
+    <path d="M380,300 C350,380 325,450 312,580"/>
+  </g>
+
+  <!-- Large lush leaves -->
+  <path d="M280,480 C190,440 100,350 90,220 C130,290 200,380 285,440 Z" fill="url(#bqLeaf)" opacity="0.95"/>
+  <path d="M320,480 C410,440 500,350 510,220 C470,290 400,380 315,440 Z" fill="url(#bqLeaf)" opacity="0.95"/>
+  <path d="M290,470 C240,410 180,310 200,180 C230,270 270,360 295,440 Z" fill="url(#bqLeaf)" opacity="0.85"/>
+  <path d="M310,470 C360,410 420,310 400,180 C370,270 330,360 305,440 Z" fill="url(#bqLeaf)" opacity="0.85"/>
+
+  <!-- TULIP 1 (Far Left - Deep Violet) -->
+  <g transform="translate(140, 200) rotate(-22) scale(0.68)">
+    <path d="M50,150 C10,90 25,40 50,30 C75,40 90,90 50,150 Z" fill="url(#bqDark)"/>
+    <path d="M50,150 C0,140 -15,80 5,45 C25,18 45,30 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,150 C100,140 115,80 95,45 C75,18 55,30 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,155 C20,145 15,85 35,45 C45,25 65,25 75,55 C90,105 75,150 50,155 Z" fill="url(#bqLight)"/>
+  </g>
+
+  <!-- TULIP 2 (Far Right - Deep Violet) -->
+  <g transform="translate(410, 200) rotate(22) scale(0.68)">
+    <path d="M50,150 C10,90 25,40 50,30 C75,40 90,90 50,150 Z" fill="url(#bqDark)"/>
+    <path d="M50,150 C0,140 -15,80 5,45 C25,18 45,30 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,150 C100,140 115,80 95,45 C75,18 55,30 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,155 C20,145 15,85 35,45 C45,25 65,25 75,55 C90,105 75,150 50,155 Z" fill="url(#bqSoftPink)"/>
+  </g>
+
+  <!-- TULIP 3 (Mid Left - Soft Lilac) -->
+  <g transform="translate(200, 130) rotate(-11) scale(0.8)">
+    <path d="M50,150 C10,90 25,40 50,30 C75,40 90,90 50,150 Z" fill="url(#bqDark)"/>
+    <path d="M50,150 C-5,140 -15,75 8,40 C28,15 48,25 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,150 C105,140 115,75 92,40 C72,15 52,25 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,155 C20,145 15,80 35,40 C45,20 65,20 75,50 C92,100 78,150 50,155 Z" fill="url(#bqLight)"/>
+  </g>
+
+  <!-- TULIP 4 (Mid Right - Soft Pinkish Lavender) -->
+  <g transform="translate(350, 130) rotate(11) scale(0.8)">
+    <path d="M50,150 C10,90 25,40 50,30 C75,40 90,90 50,150 Z" fill="url(#bqDark)"/>
+    <path d="M50,150 C-5,140 -15,75 8,40 C28,15 48,25 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,150 C105,140 115,75 92,40 C72,15 52,25 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,155 C20,145 15,80 35,40 C45,20 65,20 75,50 C92,100 78,150 50,155 Z" fill="url(#bqSoftPink)"/>
+  </g>
+
+  <!-- TULIP 5 (Top Center Crown - Glorious Radiant Lavender) -->
+  <g transform="translate(265, 75) scale(0.85)">
+    <path d="M50,150 C10,90 25,35 50,25 C75,35 90,90 50,150 Z" fill="url(#bqDark)"/>
+    <path d="M50,150 C-10,140 -20,70 8,35 C30,10 50,20 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,150 C110,140 120,70 92,35 C70,10 50,20 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,155 C18,145 12,75 35,35 C46,15 66,15 78,45 C95,95 80,150 50,155 Z" fill="url(#bqLight)"/>
+    <circle cx="48" cy="70" r="3" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+
+  <!-- TULIP 6 (Front Center Hero Bloom) -->
+  <g transform="translate(255, 180) scale(1.05)" filter="url(#bqGlow)">
+    <path d="M50,150 C10,90 25,35 50,25 C75,35 90,90 50,150 Z" fill="url(#bqDark)"/>
+    <path d="M50,150 C-15,138 -20,68 8,32 C30,8 50,18 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,150 C115,138 120,68 92,32 C70,8 50,18 50,150 Z" fill="url(#bqMed)"/>
+    <path d="M50,155 C16,144 10,70 34,30 C46,10 66,10 78,40 C96,92 82,150 50,155 Z" fill="url(#bqLight)"/>
+    <path d="M50,150 C44,110 46,70 50,45 C54,70 56,110 50,150 Z" fill="#FFFFFF" opacity="0.3"/>
+    <circle cx="46" cy="65" r="3.5" fill="#FFFFFF" opacity="0.85"/>
+    <circle cx="58" cy="85" r="2" fill="#FAF7FF" opacity="0.7"/>
+  </g>
+
+  <!-- Ribbon Tie & Bow -->
+  <!-- Back Ribbon tails -->
+  <path d="M260,490 C230,530 190,570 200,630 C220,635 240,580 280,510 Z" fill="url(#ribbonGrad)" opacity="0.9"/>
+  <path d="M340,490 C370,530 410,570 400,630 C380,635 360,580 320,510 Z" fill="url(#ribbonGrad)" opacity="0.9"/>
+  <!-- Wrap Band -->
+  <ellipse cx="300" cy="485" rx="42" ry="16" fill="url(#ribbonGrad)"/>
+  <!-- Bow loops -->
+  <path d="M300,485 C270,440 210,450 230,490 C245,510 285,495 300,485 Z" fill="url(#ribbonGrad)"/>
+  <path d="M300,485 C330,440 390,450 370,490 C355,510 315,495 300,485 Z" fill="url(#ribbonGrad)"/>
+  <!-- Knot -->
+  <circle cx="300" cy="485" r="14" fill="#5A189A"/>
+  <circle cx="300" cy="485" r="10" fill="url(#ribbonGrad)"/>
+
+  <!-- Sparkle Stars -->
+  <path d="M160,110 Q160,125 145,125 Q160,125 160,140 Q160,125 175,125 Q160,125 160,110 Z" fill="#F5D9F2" opacity="0.8"/>
+  <path d="M430,90 Q430,105 415,105 Q430,105 430,120 Q430,105 445,105 Q430,105 430,90 Z" fill="#D8B4F8" opacity="0.85"/>
+  <path d="M220,40 Q220,55 205,55 Q220,55 220,70 Q220,55 235,55 Q220,55 220,40 Z" fill="#FAF7FF" opacity="0.9"/>
+  <path d="M375,50 Q375,63 362,63 Q375,63 375,76 Q375,63 388,63 Q375,63 375,50 Z" fill="#FFFFFF" opacity="0.85"/>
+</svg>

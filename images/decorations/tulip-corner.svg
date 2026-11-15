@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="crnGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7B2CBF"/>
+      <stop offset="60%" stop-color="#B57EDC"/>
+      <stop offset="100%" stop-color="#D8B4F8"/>
+    </linearGradient>
+    <linearGradient id="crnGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5A189A"/>
+      <stop offset="100%" stop-color="#F5D9F2"/>
+    </linearGradient>
+    <linearGradient id="crnStem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#588157"/>
+      <stop offset="100%" stop-color="#8DB58A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Corner Flourish Vines -->
+  <path d="M8,180 C8,80 80,8 180,8" fill="none" stroke="url(#crnGrad1)" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.6"/>
+  <path d="M12,150 C12,65 65,12 150,12" fill="none" stroke="url(#crnStem)" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Swirls -->
+  <path d="M12,150 C12,175 30,175 30,160 C30,145 18,148 18,155" fill="none" stroke="url(#crnStem)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M150,12 C175,12 175,30 160,30 C145,30 148,18 155,18" fill="none" stroke="url(#crnStem)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Corner Leaves -->
+  <path d="M35,115 C20,95 25,75 42,70 C48,90 42,105 35,115 Z" fill="#648E62" opacity="0.8"/>
+  <path d="M115,35 C95,20 75,25 70,42 C90,48 105,42 115,35 Z" fill="#648E62" opacity="0.8"/>
+
+  <!-- Main Corner Tulip (Center diagonal) -->
+  <g transform="translate(38, 38) rotate(45) scale(0.38)">
+    <path d="M50,130 C20,80 30,40 50,30 C70,40 80,80 50,130 Z" fill="#5A189A"/>
+    <path d="M50,130 C5,120 -10,70 10,40 C30,15 45,25 50,130 Z" fill="url(#crnGrad2)"/>
+    <path d="M50,130 C95,120 110,70 90,40 C70,15 55,25 50,130 Z" fill="url(#crnGrad2)"/>
+    <path d="M50,135 C22,125 18,75 35,38 C45,18 65,18 75,45 C90,85 78,130 50,135 Z" fill="url(#crnGrad1)"/>
+  </g>
+
+  <!-- Little Bud on Left -->
+  <g transform="translate(16, 95) rotate(-15) scale(0.22)">
+    <path d="M50,130 C20,80 30,40 50,30 C70,40 80,80 50,130 Z" fill="#7B2CBF"/>
+    <path d="M50,135 C25,125 20,75 35,40 C45,20 65,20 75,45 C85,85 75,130 50,135 Z" fill="url(#crnGrad1)"/>
+  </g>
+
+  <!-- Little Bud on Top -->
+  <g transform="translate(95, 16) rotate(75) scale(0.22)">
+    <path d="M50,130 C20,80 30,40 50,30 C70,40 80,80 50,130 Z" fill="#7B2CBF"/>
+    <path d="M50,135 C25,125 20,75 35,40 C45,20 65,20 75,45 C85,85 75,130 50,135 Z" fill="url(#crnGrad1)"/>
+  </g>
+
+  <!-- Shimmering Dots -->
+  <circle cx="82" cy="72" r="2.5" fill="#B57EDC" opacity="0.7"/>
+  <circle cx="72" cy="82" r="2" fill="#D8B4F8" opacity="0.8"/>
+  <circle cx="100" cy="55" r="1.5" fill="#7B2CBF" opacity="0.6"/>
+  <circle cx="55" cy="100" r="1.5" fill="#7B2CBF" opacity="0.6"/>
+</svg>

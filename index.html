@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Baby | A Romantic Purple Tulip Garden</title>
+  <meta name="description" content="A personalized romantic purple tulip garden website dedicated with love to my girlfriend.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/decorations/purple-tulip.svg">
+  
+  <!-- Google Fonts: Playfair Display, Alex Brush, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="welcome-screen" id="welcome-screen" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+    <div class="welcome-petal-burst" id="welcome-petal-burst" aria-hidden="true"></div>
+    <div class="welcome-content">
+      <p class="welcome-eyebrow">A little surprise for you</p>
+      <h1 class="welcome-title" id="welcome-title">For My Baby</h1>
+      <p class="welcome-message">A little love is waiting inside.</p>
+
+      <button class="welcome-envelope" id="welcome-envelope" type="button" aria-label="Open your tulip surprise">
+        <span class="welcome-envelope-visual" aria-hidden="true">
+          <span class="welcome-envelope-back"></span>
+          <span class="welcome-letter-preview">To My Baby</span>
+          <span class="welcome-envelope-front"></span>
+          <span class="welcome-envelope-flap"></span>
+          <img src="images/decorations/tulip-seal.svg" alt="" class="welcome-envelope-seal">
+        </span>
+        <span class="welcome-open-prompt">Tap the envelope to open</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Floating Falling Tulip Petals Canvas -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- ======================================================================
+       NAVIGATION BAR
+       ====================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <img src="images/decorations/purple-tulip.svg" alt="Purple Tulip" class="brand-tulip">
+        <span>My Baby</span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About Her</a></li>
+          <li><a href="#carousel" class="nav-link">Photos</a></li>
+          <li><a href="#video" class="nav-link">Our Film</a></li>
+          <li><a href="#reasons" class="nav-link">Love Notes</a></li>
+          <li><a href="#memories" class="nav-link">Scrapbook</a></li>
+          <li><a href="#letter" class="nav-link">Love Letter</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Interactive Controls -->
+      <div class="nav-actions">
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <audio id="background-music" src="images/always.mp4" loop preload="none" aria-hidden="true"></audio>
+
+  <div class="music-widget" id="music-widget">
+    <button class="music-toggle" id="music-toggle" type="button" aria-label="Play romantic melody" aria-pressed="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M9 18V5l12-2v13"/>
+        <circle cx="6" cy="18" r="3"/>
+        <circle cx="18" cy="16" r="3"/>
+      </svg>
+      <span class="music-label">Play</span>
+    </button>
+    <span class="music-error" id="music-error" role="status" aria-live="polite"></span>
+  </div>
+
+  <!-- ======================================================================
+       1. HERO SECTION
+       ====================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+
+    <div class="container hero-grid">
+      <!-- Left Content Column -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip">
+          <span>A Dedicated Purple Tulip For My Baby</span>
+        </div>
+
+        <h1 class="hero-title">
+          In a Field of Roses, You'll Always Be My
+          <span class="highlight-purple">Purple Tulip</span>
+          <span class="script-accent">Forever & Always</span>
+        </h1>
+
+        <p class="hero-desc">
+          Because your favorite color is purple, I built this little universe just for you.
+          Every petal, every melody, and every memory here is a reminder of how deeply you are loved.
+        </p>
+
+        <!-- Days Together Live Counter -->
+        <div class="hero-counter">
+          <div class="counter-title">
+            <span>Days Spent Loving You</span>
+            <span style="font-size: 1.1rem; color: #7B2CBF;">♥</span>
+          </div>
+          <div class="counter-units">
+            <div class="counter-box">
+              <div class="counter-num" id="counter-days">314</div>
+              <div class="counter-label">Days</div>
+            </div>
+            <div class="counter-box">
+              <div class="counter-num" id="counter-hours">14</div>
+              <div class="counter-label">Hours</div>
+            </div>
+            <div class="counter-box">
+              <div class="counter-num" id="counter-minutes">58</div>
+              <div class="counter-label">Minutes</div>
+            </div>
+            <div class="counter-box">
+              <div class="counter-num" id="counter-seconds">12</div>
+              <div class="counter-label">Seconds</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Column: Front-Facing Tulip Bouquet -->
+      <div class="hero-visual">
+        <div class="hero-bouquet-frame">
+          <img src="images/decorations/tulip-bouquet.svg" alt="Front-facing purple tulip bouquet with a ribbon" class="hero-bouquet-img">
+          
+          <!-- Floating romantic badges -->
+          <div class="floating-tulip-badge badge-top-right">
+            <img src="images/decorations/purple-tulip.svg" alt="Tulip">
+            <span>My Favorite Person</span>
+          </div>
+
+          <div class="floating-tulip-badge badge-bottom-left">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#7B2CBF">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+            <span>My Universe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       2. ABOUT HER SECTION
+       ====================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip">
+          <span>The Girl Who Holds My Heart</span>
+        </div>
+        <h2 class="section-title">All About My Baby</h2>
+        <p class="section-subtitle">
+          The prettiest soul, the brightest smile, and the sweetest warmth in my life.
+        </p>
+        <div class="tulip-divider">
+          <div class="line"></div>
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip" class="tulip-icon">
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Profile Portrait with Tulip Corner Decorations -->
+        <div class="profile-card-wrapper">
+          <div class="profile-card">
+            <!-- 4 Ornate Tulip Corner Embellishments -->
+            <img src="images/decorations/tulip-corner.svg" alt="Corner Decoration" class="corner-tulip top-left">
+            <img src="images/decorations/tulip-corner.svg" alt="Corner Decoration" class="corner-tulip top-right">
+            <img src="images/decorations/tulip-corner.svg" alt="Corner Decoration" class="corner-tulip bottom-left">
+            <img src="images/decorations/tulip-corner.svg" alt="Corner Decoration" class="corner-tulip bottom-right">
+
+            <div class="profile-img-container" data-lightbox data-img-src="images/photos/profile.svg" data-title="Merry Rose Ann Estrella">
+              <img src="images/photos/m1.jpg" alt="Merry Rose Ann Estrella" class="profile-img">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right: Her Cute Details & Favorites -->
+        <div class="about-details">
+          <!-- Nicknames Tags -->
+          <div>
+            <h4 style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #7B2CBF; margin-bottom: 10px; font-weight: 700;">
+              What I Call Her
+            </h4>
+            <div class="nicknames-wrapper">
+              <span class="nickname-pill">My Pretty Baby</span>
+              <span class="nickname-pill">Cutepal</span>
+            </div>
+          </div>
+
+          <!-- Sweet Romantic Quote Box -->
+          <div class="about-quote-box">
+            "Being by your side makes me feel loved."
+          </div>
+
+          <!-- Her Favorite Things Grid -->
+          <div>
+            <h4 class="fav-things-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#B57EDC">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              Things She Loves
+            </h4>
+            <div class="fav-things-grid">
+              <div class="fav-card">
+                <div class="fav-card-icon">
+                  <div style="width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(135deg, #7B2CBF, #B57EDC, #D8B4F8);"></div>
+                </div>
+                <div class="fav-card-info">
+                  <h4>Favorite Color</h4>
+                  <p>Purple</p>
+                </div>
+              </div>
+
+              <div class="fav-card">
+                <div class="fav-card-icon">
+                  <img src="images/decorations/purple-tulip.svg" alt="Tulip">
+                </div>
+                <div class="fav-card-info">
+                  <h4>Favorite Flower</h4>
+                  <p>Purple Tulips</p>
+                </div>
+              </div>
+
+              <div class="fav-card">
+                <div class="fav-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7B2CBF" stroke-width="2">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                    <line x1="6" y1="1" x2="6" y2="4"/>
+                    <line x1="10" y1="1" x2="10" y2="4"/>
+                    <line x1="14" y1="1" x2="14" y2="4"/>
+                  </svg>
+                </div>
+                <div class="fav-card-info">
+                  <h4>Favorite Food</h4>
+                  <p>Cheesecake, Macarons, Fries</p>
+                </div>
+              </div>
+
+              <div class="fav-card">
+                <div class="fav-card-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7B2CBF" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                    <line x1="9" y1="9" x2="9.01" y2="9"/>
+                    <line x1="15" y1="9" x2="15.01" y2="9"/>
+                  </svg>
+                </div>
+                <div class="fav-card-info">
+                  <h4>Favorite Habit</h4>
+                  <p>KAGATIN KAMAY KO AT LAP AY HAHAHAHAHA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       3. PHOTO CAROUSEL SECTION
+       ====================================================================== -->
+  <section class="carousel-section" id="carousel">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip">
+          <span>Captured In Purple Light</span>
+        </div>
+        <h2 class="section-title">20 Photos Of My Baby</h2>
+        <p class="section-subtitle">
+          Twenty snapshots drifting together in one continuous loop. Select any photo to view it.
+        </p>
+        <div class="tulip-divider">
+          <div class="line"></div>
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip" class="tulip-icon">
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <div class="carousel-outer">
+        <div class="carousel-track-container" id="carousel-track-container" role="region" aria-label="Continuous strip of twenty photos">
+          <div class="carousel-track" id="carousel-track" aria-live="off"></div>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="carousel-play-toggle" id="carousel-play-toggle" type="button" aria-haspopup="dialog">
+            <span class="carousel-play-symbol" aria-hidden="true">▶</span>
+            <span id="carousel-play-label">View Photo Animation</span>
+          </button>
+        </div>
+        <p class="carousel-assets-note" id="carousel-assets-note" role="status" hidden></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="photo-animation-modal" id="photo-animation-modal" aria-hidden="true">
+    <div class="photo-animation-backdrop" id="photo-animation-backdrop"></div>
+    <section class="photo-animation-dialog" id="photo-animation-dialog" role="dialog" aria-modal="true" aria-labelledby="photo-animation-title" tabindex="-1">
+      <header class="photo-animation-header">
+        <div>
+          <p class="photo-animation-eyebrow">A little gallery of us</p>
+          <h2 id="photo-animation-title">20 Moments With My Baby</h2>
+        </div>
+        <button class="photo-animation-close" id="photo-animation-close" type="button" aria-label="Close photo animation">×</button>
+      </header>
+      <div class="photo-animation-stage" id="photo-animation-stage" role="group" aria-label="Twenty floating photos">
+        <div class="photo-animation-garden" aria-hidden="true">
+          <img class="photo-animation-tulip photo-animation-tulip-one" src="images/decorations/purple-tulip.svg" alt="">
+          <img class="photo-animation-tulip photo-animation-tulip-two" src="images/decorations/purple-tulip.svg" alt="">
+          <img class="photo-animation-tulip photo-animation-tulip-three" src="images/decorations/purple-tulip.svg" alt="">
+          <span class="photo-animation-petal"></span>
+          <span class="photo-animation-petal"></span>
+          <span class="photo-animation-petal"></span>
+          <span class="photo-animation-petal"></span>
+          <span class="photo-animation-petal"></span>
+          <span class="photo-animation-petal"></span>
+          <span class="photo-animation-petal"></span>
+          <span class="photo-animation-petal"></span>
+          <span class="photo-animation-petal"></span>
+          <span class="photo-animation-petal"></span>
+        </div>
+      </div>
+      <footer class="photo-animation-footer">
+        <p>Every little moment, floating around my heart.</p>
+        <button class="photo-animation-motion-toggle" id="photo-animation-motion-toggle" type="button" aria-pressed="false">Pause Motion</button>
+      </footer>
+    </section>
+  </div>
+
+  <!-- ======================================================================
+       4. VIDEO SECTION
+       ====================================================================== -->
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip">
+          <span>Our Love In Motion</span>
+        </div>
+        <h2 class="section-title">Special Video Montage</h2>
+        <p class="section-subtitle">
+          Every laugh, every glance, and every heartbeat caught on film.
+        </p>
+        <div class="tulip-divider">
+          <div class="line"></div>
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip" class="tulip-icon">
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <!-- Soft Purple Gradient Video Container -->
+      <div class="video-container-card">
+        <div class="video-wrapper">
+          <video id="romantic-video" controls poster="images/photos/moment4.svg" style="display: none;">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <!-- Interactive Romantic Video Mockup / Fallback -->
+          <div class="video-placeholder-content" id="video-placeholder">
+            <button class="video-play-btn" id="video-play-btn" aria-label="Play Romantic Video">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </button>
+            <h3 class="video-placeholder-title">A Reel of Infinite Love</h3>
+            <p class="video-placeholder-desc">
+              Click to view our video memories. You can also drop any personal video file (`video.mp4`) right into this section!
+            </p>
+            <input type="file" id="video-file-input" accept="video/*" style="display: none;">
+            <button class="btn-secondary" id="upload-video-trigger" style="margin-top: 18px; padding: 10px 22px; font-size: 0.9rem;">
+              📹 Choose Video Clip (MP4)
+            </button>
+          </div>
+        </div>
+
+        <!-- Video Quote & Controls Bar -->
+        <div class="video-controls-bar">
+          <div class="video-quote">
+            <img src="images/decorations/purple-tulip.svg" alt="Tulip">
+            <span>"Every video, every laugh, every split second captured with you is my greatest treasure."</span>
+          </div>
+          <div style="font-weight: 700; color: #7B2CBF; font-size: 0.9rem;">
+            Dedicated With All My Heart
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. THINGS I LOVE ABOUT HER SECTION
+       ====================================================================== -->
+  <section class="reasons-section" id="reasons">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip">
+          <span>Little Things, Big Love</span>
+        </div>
+        <h2 class="section-title">Things I Love About Her</h2>
+        <p class="section-subtitle">
+          Her favorite treats and comfort foods.
+        </p>
+        <div class="tulip-divider">
+          <div class="line"></div>
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip" class="tulip-icon">
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <div class="food-gallery">
+        <figure class="food-photo food-photo--macarons" data-lightbox data-title="Macarons" data-subtitle="One of her favorite foods" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View larger photo of macarons">
+          <img src="images/foods/macarons.jpg" alt="Purple macarons with violet flowers" loading="lazy">
+          <figcaption class="food-photo-caption">
+            <span class="food-photo-icon" aria-hidden="true"></span>
+            <span class="food-photo-name">Macarons</span>
+          </figcaption>
+        </figure>
+
+        <figure class="food-photo food-photo--mochi" data-lightbox data-title="Mochi" data-subtitle="One of her favorite foods" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View larger photo of mochi">
+          <img src="images/foods/mochi.jpg" alt="Purple mochi with blueberries" loading="lazy">
+          <figcaption class="food-photo-caption">
+            <span class="food-photo-icon" aria-hidden="true"></span>
+            <span class="food-photo-name">Mochi</span>
+          </figcaption>
+        </figure>
+
+        <figure class="food-photo food-photo--cookies" data-lightbox data-title="Cookies and Cream" data-subtitle="One of her favorite foods" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View larger photo of cookies and cream">
+          <img src="images/foods/cookies-and-cream.jpg" alt="Cookies and cream ice cream" loading="lazy">
+          <figcaption class="food-photo-caption">
+            <span class="food-photo-icon" aria-hidden="true"></span>
+            <span class="food-photo-name">Cookies and Cream</span>
+          </figcaption>
+        </figure>
+
+        <figure class="food-photo food-photo--fries" data-lightbox data-title="French Fries" data-subtitle="One of her favorite foods" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View larger photo of french fries">
+          <img src="images/foods/french-fries.jpg" alt="Crispy french fries with dipping sauces" loading="lazy">
+          <figcaption class="food-photo-caption">
+            <span class="food-photo-icon" aria-hidden="true"></span>
+            <span class="food-photo-name">French Fries</span>
+          </figcaption>
+        </figure>
+
+        <figure class="food-photo food-photo--cheesecake" data-lightbox data-title="Blueberry Cheesecake" data-subtitle="One of her favorite foods" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View larger photo of blueberry cheesecake">
+          <img src="images/foods/blueberry-cheesecake.jpg" alt="Blueberry cheesecake with berry topping" loading="lazy">
+          <figcaption class="food-photo-caption">
+            <span class="food-photo-icon" aria-hidden="true"></span>
+            <span class="food-photo-name">Blueberry Cheesecake</span>
+          </figcaption>
+        </figure>
+
+        <figure class="food-photo food-photo--ramen" data-lightbox data-title="Ramen" data-subtitle="One of her favorite foods" role="button" tabindex="0" aria-haspopup="dialog" aria-label="View larger photo of ramen">
+          <img src="images/foods/ramen.jpg" alt="Ramen bowl with noodles, egg, and toppings" loading="lazy">
+          <figcaption class="food-photo-caption">
+            <span class="food-photo-icon" aria-hidden="true"></span>
+            <span class="food-photo-name">Ramen</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. OUR MEMORIES SECTION (Scrapbook Gallery)
+       ====================================================================== -->
+  <section class="memories-section" id="memories">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip">
+          <span>Pieces of Our Journey</span>
+        </div>
+        <h2 class="section-title">Our Scrapbook</h2>
+        <p class="section-subtitle">
+          Tilted polaroids, sweet memories, and little moments pinned with love.
+        </p>
+        <div class="tulip-divider">
+          <div class="line"></div>
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip" class="tulip-icon">
+          <div class="line"></div>
+        </div>
+      </div>
+
+
+      <!-- Scrapbook Grid -->
+      <div class="scrapbook-grid">
+        <!-- Item 1 -->
+        <div class="scrapbook-item" data-category="dates">
+          <div class="polaroid-card">
+            <div class="washi-tape"></div>
+            <div class="polaroid-img-box" data-lightbox data-img-src="images/photos/coffee1.jpg">
+              <img src="images/photos/coffee1.jpg" alt="First Date">
+            </div>
+            <div class="polaroid-caption">
+              <h4 class="polaroid-title">First Coffee Date</h4>
+            </div>
+            <img src="images/decorations/purple-tulip.svg" alt="Tulip Sticker" class="polaroid-sticker">
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="scrapbook-item" data-category="dates">
+          <div class="polaroid-card">
+            <div class="washi-tape"></div>
+            <div class="polaroid-img-box" data-lightbox data-img-src="images/photos/ramen1.jpg">
+              <img src="images/photos/ramen1.jpg" alt="Ramen Date">
+            </div>
+            <div class="polaroid-caption">
+              <h4 class="polaroid-title">RAAAMMEEENNN</h4>
+            </div>
+            <img src="images/decorations/purple-tulip.svg" alt="Tulip Sticker" class="polaroid-sticker">
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="scrapbook-item" data-category="trips">
+          <div class="polaroid-card">
+            <div class="washi-tape"></div>
+            <div class="polaroid-img-box" data-lightbox data-img-src="images/photos/eye.jpg">
+              <img src="images/photos/eye.jpg" alt="Road Trip">
+            </div>
+            <div class="polaroid-caption">
+              <h4 class="polaroid-title">Pretty Eyes</h4>
+            </div>
+            <img src="images/decorations/purple-tulip.svg" alt="Tulip Sticker" class="polaroid-sticker">
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="scrapbook-item" data-category="trips">
+          <div class="polaroid-card">
+            <div class="washi-tape"></div>
+            <div class="polaroid-img-box" data-lightbox data-img-src="images/photos/sunset.jpg">
+              <img src="images/photos/sunset.jpg" alt="Tulip Garden">
+            </div>
+            <div class="polaroid-caption">
+              <h4 class="polaroid-title">Sunset View</h4>
+            </div>
+            <img src="images/decorations/purple-tulip.svg" alt="Tulip Sticker" class="polaroid-sticker">
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="scrapbook-item" data-category="milestones">
+          <div class="polaroid-card">
+            <div class="washi-tape"></div>
+            <div class="polaroid-img-box" data-lightbox data-img-src="images/photos/shadow.jpg">
+              <img src="images/photos/shadow.jpg" alt="Stargazing">
+            </div>
+            <div class="polaroid-caption">
+              <h4 class="polaroid-title">Shadow of Us</h4>
+
+            </div>
+            <img src="images/decorations/purple-tulip.svg" alt="Tulip Sticker" class="polaroid-sticker">
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="scrapbook-item" data-category="milestones">
+          <div class="polaroid-card">
+            <div class="washi-tape"></div>
+            <div class="polaroid-img-box" data-lightbox data-img-src="images/photos/m9.jpg">
+              <img src="images/photos/m9.jpg" alt="Forever">
+            </div>
+            <div class="polaroid-caption">
+              <h4 class="polaroid-title">Little Merry</h4>
+            </div>
+            <img src="images/decorations/purple-tulip.svg" alt="Tulip Sticker" class="polaroid-sticker">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       7. LOVE LETTER SECTION (Lavender Envelope & Tulip Wax Seal)
+       ====================================================================== -->
+  <section class="letter-section" id="letter">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip">
+          <span>Straight From My Heart</span>
+        </div>
+        <h2 class="section-title">A Letter For You</h2>
+        <p class="section-subtitle">
+          Sealed with a purple tulip wax emblem, waiting for you to unseal it.
+        </p>
+        <div class="tulip-divider">
+          <div class="line"></div>
+          <img src="images/decorations/purple-tulip.svg" alt="Tulip" class="tulip-icon">
+          <div class="line"></div>
+        </div>
+      </div>
+
+      <div class="envelope-stage">
+        <!-- Interactive Envelope Box -->
+        <div class="envelope-box" id="envelope-box">
+          <div class="envelope-header-graphic">
+            <button class="envelope-seal-btn" id="envelope-seal-btn" title="Click to break the tulip wax seal and open">
+              <img src="images/decorations/tulip-seal.svg" alt="Purple Tulip Wax Seal">
+            </button>
+          </div>
+          <h3 class="envelope-prompt">To My Pretty Baby</h3>
+          <p class="envelope-subtext">Click the purple tulip wax seal to unfold your handwritten letter</p>
+          <span class="envelope-click-hint">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            </svg>
+            Click To Unseal Letter
+          </span>
+        </div>
+
+        <!-- Unfolded Romantic Letter Paper -->
+        <div class="letter-paper" id="letter-paper">
+          <!-- Corner Flourishes -->
+          <img src="images/decorations/tulip-corner.svg" alt="Flourish" class="corner-tulip top-left">
+          <img src="images/decorations/tulip-corner.svg" alt="Flourish" class="corner-tulip top-right">
+
+          <h3 class="letter-greeting">My Dearest Baby,</h3>
+
+          <div class="letter-body">
+            <p>
+              Naalala ko pa noong first time kitang maka-usap, hindi ko akalain na magtutuloy talaga 'yon. Pero ngayon, 1 year na tayong magkasama, at mas lalo kong na-appreciate ang bawat araw na kasama kita. 
+            </p>
+            <p>
+             Naway magustuhan mo itong simpleng website na ginawa ko para sa'yo. Matagal ko rin ito pinag handaan para maipakita sayo kahit gustong-gusto mo na makita kaya ginagawa ko na lang ay pasilip muna hahahaha. Kaya naway ma-appreciate mo ang effort na ginawa ko para sa'yo.
+            </p>
+            <p>
+              More years of us together, andito lang ako palagi para sayo. I love you so much, Cutepal!
+            </p>
+          </div>
+
+          <div class="letter-signoff">
+            Yours forever & always,<br>
+            <span style="font-size: 1.8rem; color: #7B2CBF;">Pum</span>
+          </div>
+
+          <div class="letter-actions">
+            <button class="btn-seal-back" id="btn-seal-back">
+              ✉ Seal Letter Back
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       8. FOOTER SECTION
+       ====================================================================== -->
+  <footer class="footer-section" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Bouquet Emblem -->
+        <a href="#hero" title="Return to Top">
+          <img src="images/decorations/tulip-bouquet.png" alt="Purple Tulip Bouquet Emblem" class="footer-bouquet-emblem">
+        </a>
+
+        <h3 class="footer-title">My Baby's Purple Garden</h3>
+
+        <!-- Footer Navigation Links -->
+        <nav class="footer-nav">
+          <a href="#hero">Home</a>
+          <a href="#about">About Her</a>
+          <a href="#carousel">Photos</a>
+          <a href="#video">Video</a>
+          <a href="#reasons">Reasons</a>
+          <a href="#memories">Memories</a>
+          <a href="#letter">Love Letter</a>
+        </nav>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+          <button class="back-to-top" id="back-to-top">
+            <img src="images/decorations/purple-tulip.svg" alt="Tulip" style="width: 16px; height: 16px;">
+            <span>Back to Garden Top ↑</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       LIGHTBOX MODAL
+       ====================================================================== -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo View">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close photo view">×</button>
+      <img src="" alt="Enlarged view" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-caption">
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/petals.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

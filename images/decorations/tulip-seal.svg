@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <radialGradient id="waxGrad" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#9D4EDD"/>
+      <stop offset="45%" stop-color="#7B2CBF"/>
+      <stop offset="85%" stop-color="#5A189A"/>
+      <stop offset="100%" stop-color="#3C096C"/>
+    </radialGradient>
+    <filter id="waxShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#240046" flood-opacity="0.4"/>
+    </filter>
+    <linearGradient id="emboss" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E9D5FF"/>
+      <stop offset="60%" stop-color="#D8B4F8"/>
+      <stop offset="100%" stop-color="#7B2CBF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Organic Wax Seal Outer Rim -->
+  <path d="M50,8 C65,7 72,12 82,20 C92,28 94,38 93,50 C92,63 88,74 78,83 C68,92 56,93 47,92 C32,91 22,87 14,76 C6,65 7,52 8,42 C9,30 16,18 26,12 C36,6 42,9 50,8 Z" fill="url(#waxGrad)" filter="url(#waxShadow)"/>
+
+  <!-- Inner Rim Ridge -->
+  <circle cx="50" cy="50" r="32" fill="none" stroke="#5A189A" stroke-width="2.5" opacity="0.6"/>
+  <circle cx="50" cy="50" r="30" fill="none" stroke="#D8B4F8" stroke-width="1" opacity="0.5"/>
+
+  <!-- Embossed Tulip Emblem -->
+  <g transform="translate(50, 48) scale(0.38)">
+    <path d="M0,20 Q2,45 0,65" fill="none" stroke="url(#emboss)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M0,50 C-15,40 -25,25 -20,8 C-10,18 0,32 0,42 Z" fill="url(#emboss)" opacity="0.8"/>
+    <path d="M0,50 C15,40 25,25 20,8 C10,18 0,32 0,42 Z" fill="url(#emboss)" opacity="0.8"/>
+    <!-- Petals -->
+    <path d="M0,18 C-30,10 -35,-30 -8,-50 C0,-35 0,-10 0,18 Z" fill="url(#emboss)" opacity="0.85"/>
+    <path d="M0,18 C30,10 35,-30 8,-50 C0,-35 0,-10 0,18 Z" fill="url(#emboss)" opacity="0.85"/>
+    <path d="M0,22 C-18,15 -18,-35 0,-48 C18,-35 18,15 0,22 Z" fill="url(#emboss)"/>
+  </g>
+
+  <!-- Wax Highlight -->
+  <ellipse cx="40" cy="24" rx="14" ry="7" fill="#FFFFFF" opacity="0.22" transform="rotate(-15, 40, 24)"/>
+</svg>
