@@ -1955,6 +1955,9 @@ p, li, button, a, .nickname-pill, .timeline-date, .carousel-date-badge {
 }
 
 .video-play-btn {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
   width: 76px;
   height: 76px;
   border-radius: 50%;
@@ -1965,7 +1968,6 @@ p, li, button, a, .nickname-pill, .timeline-date, .carousel-date-badge {
   justify-content: center;
   color: var(--pure-white);
   box-shadow: 0 10px 30px rgba(123, 44, 191, 0.5);
-  margin-bottom: 20px;
   transition: all var(--transition-normal);
 }
 
@@ -3566,9 +3568,10 @@ p, li, button, a, .nickname-pill, .timeline-date, .carousel-date-badge {
   }
 
   .video-play-btn {
+    left: 16px;
+    bottom: 16px;
     width: 56px;
     height: 56px;
-    margin-bottom: 12px;
   }
 
   .video-play-btn svg {
