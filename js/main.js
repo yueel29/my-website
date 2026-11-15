@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const label = musicToggleBtn.querySelector('.music-label');
       const controlLabel = collapsed
         ? (playing ? 'Show music controls; melody is playing' : 'Show music controls')
-        : (playing ? 'Pause romantic melody' : 'Play romantic melody');
+        : (playing ? 'Pause song' : 'Play song');
 
       if (label) {
         label.textContent = playing ? 'Pause' : 'Play';
