@@ -3847,3 +3847,64 @@ p, li, button, a, .nickname-pill, .timeline-date, .carousel-date-badge {
     line-height: 1.35;
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  }
+
+  body.home-revealing .navbar {
+    animation: none;
+  }
+
+  .navbar.scrolled {
+    backdrop-filter: none;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: auto;
+    left: max(12px, env(safe-area-inset-left, 12px));
+    right: max(12px, env(safe-area-inset-right, 12px));
+    bottom: max(8px, env(safe-area-inset-bottom, 8px));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    width: auto;
+    padding: 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    background: rgba(250, 247, 255, 0.96);
+    backdrop-filter: var(--blur-glass);
+    border: var(--border-glass-strong);
+    border-radius: 18px;
+    box-shadow: var(--shadow-lg);
+    z-index: 1100;
+    scrollbar-width: none;
+  }
+
+  .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-menu li,
+  .nav-menu .nav-link {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .nav-menu .nav-link {
+    padding: 10px 12px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .mobile-toggle {
+    display: none;
+  }
+
+  .music-widget {
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  }
+}
